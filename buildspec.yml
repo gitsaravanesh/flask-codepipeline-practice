@@ -7,8 +7,8 @@ phases:
   build:
     commands:
       - echo "Zipping repository files..."
-      - zip -r Code-Deploy-v2.zip .
+      - zip -r Code-Deploy-package.zip .
   post_build:
     commands:
       - echo "Uploading zip to S3..."
-      - aws s3 cp Code-Deploy-v2.zip s3://repos-zip-bucket/demo-deploy-code/Code-Deploy-v2.zip
+      - aws s3 cp Code-Deploy-package.zip s3://app-packaged-file/demo-deploy-code/Code-Deploy-package.zip
