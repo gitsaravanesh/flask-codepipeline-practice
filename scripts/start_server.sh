@@ -1,6 +1,13 @@
 #!/bin/bash
-ls
-pwd
+set -xe
+
 cd /var/www/myapp
-# Start the Flask application server
-gunicorn -b 0.0.0.0:5000 app:app > /var/www/myapp/logs/gunicorn.log 2>&1 &
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Ensure logs directory exists
+mkdir -p logs
+
+# Start the Flask app using Gunicorn inside the virtual environment
+gunicorn -b 0.0.0.0:5000 app:app > logs/gunicorn.log 2>&1 &
