@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    colors = ['red', 'red', 'red', 'red', 'red', 'red', 'violet']
+    colors = ['green', 'red', 'blue', 'green', 'red', 'blue', 'violet']
     return render_template('index.html', colors=colors)
 
 if __name__ == '__main__':
