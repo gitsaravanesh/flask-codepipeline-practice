@@ -11,4 +11,4 @@ phases:
   post_build:
     commands:
       - echo "Uploading zip to S3..."
-      - aws s3 cp Code-Deploy-package.zip s3://app-packaged-bucket/demo-deploy-code/Code-Deploy-package.zip
+      - aws s3 cp Code-Deploy-package.zip s3://code-pipe-bucket-pipeline/demo-deploy-code/Code-Deploy-package.zip
